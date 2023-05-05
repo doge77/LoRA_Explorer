@@ -227,6 +227,10 @@ namespace LoRA_Explorer {
             }
         }
         private void UpdateCurrentRootButton_Click(object sender, EventArgs e) {
+            if (currentDirectory == null) {
+                return;
+            }
+
             Dictionary<string, Item> dict = itemFlowLayout.itemDict;
 
             string[] modelExt = new[] { ".pt", ".safetensors", ".ckpt" };
