@@ -2094,16 +2094,11 @@ namespace LoRA_Explorer {
     }
 
     public class DangerArea {
-        public void DeleteAllDataFiles(string path) {
-            string[] files = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories);
-            foreach (string file in files) {
-                string fileExt = Path.GetExtension(file);
-                if (Path.GetExtension(file) == ".data") {
-                    File.Delete(file);
-                    Console.WriteLine("파일 삭제: " + file);
-                }
+        public void DeleteAllDataFiles(Dictionary<string, Item> itemDict) {
+            foreach (Item item in itemDict.Values) {
+                File.Delete(item.dataPath);
+                Console.WriteLine("파일 삭제: " + item.dataPath);
             }
-
             System.Windows.Forms.Application.Exit();
         }
     }

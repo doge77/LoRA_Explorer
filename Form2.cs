@@ -135,11 +135,15 @@ namespace LoRA_Explorer {
 
         // data 파일 일괄삭제
         private void ClearDataButton_Click(object sender, EventArgs e) {
+            if (mainForm.itemFlowLayout.itemDict == null) {
+                return;
+            }
+
             var confirmResult = MessageBox.Show("정말 모든 data 파일을 삭제하고 프로그램을 종료합니까? 삭제된 data 파일은 복구할 수 없으며, 만약 달리 data 확장자를 사용하는 외부 파일이 현재 경로 하에 위치해있다면 해당 파일까지 삭제됩니다.",
             "모든 data 파일 제거", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes) {
                 DangerArea dangerArea = new DangerArea();
-                dangerArea.DeleteAllDataFiles(mainForm.rootDirectory);
+                dangerArea.DeleteAllDataFiles(mainForm.itemFlowLayout.itemDict);
             } else {
             }
         }
