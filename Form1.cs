@@ -1034,19 +1034,8 @@ namespace LoRA_Explorer {
                                 row.Cells[1].Value = json["name"].ToString();
                             }
                         }
-                        if (currentItem.imagePath == null) {
-                            string imageUrl = json["images"][0]["url"].ToString();
-                            string extension = Path.GetExtension(imageUrl);
-                            string savePath = Path.Combine(currentItem.parentPath, currentItem.modelName + extension);
-
-                            WebClient webClient = new WebClient();
-                            webClient.DownloadFile(imageUrl, savePath);
-                            currentItem.imagePath = savePath;
-                            currentItem.LoadImage();
-                        }
 
                         // creator 정보는 modelId API로 불러와야 함
-                        Console.WriteLine("Civitai 정보 모델 ID로 불러오기...");
                         string getInfosByModelID = "https://civitai.com/api/v1/models/";
                         using (HttpClient client2 = new HttpClient()) {
                             string url2 = getInfosByModelID + json["modelId"].ToString();
@@ -1069,6 +1058,16 @@ namespace LoRA_Explorer {
                             }
                         }
 
+                        if (currentItem.imagePath == null) {
+                            string imageUrl = json["images"][0]["url"].ToString();
+                            string extension = Path.GetExtension(imageUrl);
+                            string savePath = Path.Combine(currentItem.parentPath, currentItem.modelName + extension);
+
+                            WebClient webClient = new WebClient();
+                            webClient.DownloadFile(imageUrl, savePath);
+                            currentItem.imagePath = savePath;
+                            currentItem.LoadImage();
+                        }
                         SetStatus($"{currentItem.modelName}: Civitai 정보 불러오기 성공");
                     }
                 }
