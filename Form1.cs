@@ -14,6 +14,8 @@ using Newtonsoft.Json.Linq;
 using System.Security.Cryptography;
 using System.Net.Http;
 using System.Net;
+using System.Text.RegularExpressions;
+using MS.WindowsAPICodePack.Internal;
 
 namespace LoRA_Explorer {
 
@@ -43,6 +45,7 @@ namespace LoRA_Explorer {
         LocalTreeView localTreeView;
         public ItemFlowLayout itemFlowLayout;
         ItemInfo itemInfo;
+        public Dictionary<string, string> QuickDirectory = new Dictionary<string, string>();
 
         public Dictionary<string, dynamic> settings = new Dictionary<string, dynamic>();
 
@@ -58,6 +61,7 @@ namespace LoRA_Explorer {
             }
             InitializeComponent();
             DrawUI();
+            LoadQuickDirection();
 
             toolTip1.SetToolTip(ReloadingButton, "새 루트 디렉토리를 지정하고 프로그램을 갱신합니다.");
             toolTip1.SetToolTip(UpdateCurrentRootButton, "현재 로드되어있는 루트 디렉토리와 하위 디렉토리 상에 새로 추가된 아이템이 있다면 그것을 찾아 아이템 목록에 추가합니다.\n경로의 추가 또는 삭제, 아이템의 중복 감지, 삭제된 아이템에 대해선 아무런 처리도 하지 않습니다.");
@@ -76,6 +80,7 @@ namespace LoRA_Explorer {
             SavePromptDataButton.BackColor = Color.White;
             SaveItemDataChangeButton.BackColor = Color.White;
         }
+
         private void DrawUI() {
             tableLayoutPanel1.Paint += new PaintEventHandler(this.DrawUpDownBorder);
             tableLayoutPanel10.Paint += new PaintEventHandler(this.DrawUpDownBorder);
@@ -88,6 +93,53 @@ namespace LoRA_Explorer {
                 Color.Black, 1, ButtonBorderStyle.Solid
             );
         }
+
+        private void LoadQuickDirection() {
+            string path = "LoRA Explorer.txt";
+            try {
+                if (File.Exists(path)) {
+                    string[] lines = File.ReadAllLines(path);
+                    foreach (string line in lines) {
+                        string[] parts = line.Split('|');
+                        if (parts.Length == 2) {
+                            string title = parts[0].Trim();
+                            string dir = parts[1].Trim();
+                            QuickDirectionComboBox.Items.Add(title);
+                            QuickDirectory.Add(title, dir);
+                        }
+                    }
+                }
+            } catch {
+                Console.WriteLine("LoadQuickDirection.Error");
+            }
+        }
+        private void QuickDirectionComboBox_SelectedIndexChanged(object sender, EventArgs e) {
+            string selectedTitle = QuickDirectionComboBox.SelectedItem.ToString();
+            if (selectedTitle != null && QuickDirectory != null) {
+                string dir = QuickDirectory[selectedTitle];
+
+                rootDirectory = dir;
+                if (rootDirectory != null) {
+                    int itemCounter = 0;
+                    currentDirectory = rootDirectory;
+                    itemCounter = itemFlowLayout.GetAllItems(rootDirectory);
+
+                    List<string> pathes = new List<string>();
+                    foreach (Item item in itemFlowLayout.itemDict.Values) {
+                        pathes.Add(item.modelPath);
+                    }
+                    pathes = pathes.Distinct().ToList();
+
+                    localTreeView.InitializeLocalTreeView(LocalTreeView, rootDirectory, pathes);
+
+                    itemFlowLayout.InitializeFlowLayout(SortMethodCheckBox.SelectedIndex);
+
+                    SetStatus($"로드됨: {itemCounter}개 아이템.");
+                }
+            }
+            SearchTextBox.Focus();
+        }
+
         private void LoadSettings() {
             string path = "LoRA Explorer.settings";
             try {
@@ -233,7 +285,7 @@ namespace LoRA_Explorer {
 
             Dictionary<string, Item> dict = itemFlowLayout.itemDict;
 
-            string[] modelExt = new[] { ".pt", ".safetensors", ".ckpt" };
+            string[] modelExt = Constants.modelExtensions;
             string[] files = Directory.GetFiles(rootDirectory, "*.*", SearchOption.AllDirectories)
                 .Where(file => modelExt.Contains(Path.GetExtension(file)))
                 .ToArray();
@@ -535,8 +587,9 @@ namespace LoRA_Explorer {
             dialog.Title = $"{Path.GetFileName(currentItem.dataPath)} 파일을 복사할 모델을 선택하세요.";
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok) {
                 string targetModel = dialog.FileName;
+                string[] modelExt = Constants.modelExtensions;
 
-                if (!(new List<string> { ".pt", ".safetensors", ".ckpt" }).Contains(Path.GetExtension(targetModel))) {
+                if (!(modelExt).Contains(Path.GetExtension(targetModel))) {
                     var confirmResult = MessageBox.Show($"{Path.GetFileName(targetModel)} 파일은 모델 파일이 아닙니다. 그래도 해당 파일명으로 data 파일을 복사하시겠습니까? 예기치 않은 문제가 발생할 수도 있습니다.", $"{Path.GetFileName(currentItem.dataPath)} 파일 복사", MessageBoxButtons.YesNo);
                     if (confirmResult == DialogResult.Yes) {
                     } else {
@@ -1078,7 +1131,6 @@ namespace LoRA_Explorer {
             this.Enabled = true;
         }
 
-
         // 사용 안 함
         // Lazy Loading
         /*
@@ -1114,6 +1166,10 @@ namespace LoRA_Explorer {
             Console.WriteLine($"표시되는 마지막 아이템 인덱스: {lastItemIndex.ToString()}");
         }
         */
+    }
+
+    public static class Constants {
+        public static readonly string[] modelExtensions = { ".pt", ".safetensors", ".ckpt", ".bin" };
     }
 
     public class Item {
@@ -1154,7 +1210,7 @@ namespace LoRA_Explorer {
                 new JProperty("creator", ""),
                 new JProperty("url", ""),
                 new JProperty("version", ""),
-                new JProperty("downloadDate", DateTime.Now.ToString("yyyy-MM-dd")),
+                new JProperty("downloadDate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
                 new JProperty("grade", ""),
                 new JProperty("prompt", jprop)
             );
@@ -1695,7 +1751,7 @@ namespace LoRA_Explorer {
         public int GetAllItems(string path) {
             Console.WriteLine("아이템 딕셔너리 생성 시작");
 
-            string[] modelExt = new[] { ".pt", ".safetensors", ".ckpt" };
+            string[] modelExt = Constants.modelExtensions;
 
             string[] files = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
                 .Where(file => modelExt.Contains(Path.GetExtension(file)))
@@ -1931,6 +1987,19 @@ namespace LoRA_Explorer {
             }
             flowLayout.Controls.Add(nameLabel);
 
+            // 경로 라벨
+            if (!String.IsNullOrEmpty(item.parentPath)) {
+                Label pathLabel = new Label();
+                pathLabel.AutoEllipsis = true;
+
+                string relativePath = item.parentPath.Substring(mainForm.rootDirectory.Length);
+
+                pathLabel.Text = "경로: " + Path.GetFileName(mainForm.rootDirectory) + relativePath;
+                pathLabel.Width = labelWidth;
+                pathLabel.Padding = labelPadding;
+                flowLayout.Controls.Add(pathLabel);
+            }
+
             // 태그 라벨
             if (!string.IsNullOrEmpty(item.data.tag)) {
                 Label tagLabel = new Label();
@@ -1981,9 +2050,27 @@ namespace LoRA_Explorer {
             Dictionary<string, string> commonPrompt = new Dictionary<string, string>();
             Dictionary<string, string> negativePrompt = new Dictionary<string, string>();
 
-            foreach (var prompt in itemPrompts) {
-                string key = prompt.Key.Replace("__filename__", item.modelName);
-                string value = prompt.Value.Replace("__filename__", item.modelName); ;
+            foreach (var prompt in itemPrompts) { // 프롬프트 전처리
+                string key = prompt.Key;
+                string value = prompt.Value;
+
+                string weightPattern = @"<lora:__filename__:(\-?\d+(\.\d+)?)(~(\-?\d+(\.\d+)?))?>";
+                Match match = Regex.Match(value, weightPattern);
+
+                if (match.Success) {
+                    string firstNumString = match.Groups[1].Value;
+                    string secondNumString = match.Groups[4].Value;
+
+                    if (!string.IsNullOrEmpty(secondNumString)) { // n~m 형태면
+                        double min = double.Parse(firstNumString);
+                        double max = double.Parse(secondNumString);
+                        double weight = Math.Round(((min + max) / 2), 2);
+                        value = value.Replace(match.Value, $"<lora:__filename__:{weight}>");
+                    }
+                }
+
+                key = key.Replace("__filename__", item.modelName);
+                value = value.Replace("__filename__", item.modelName); ;
 
                 if (key.StartsWith("!")) {
                     keyPrompt.Add(key.Substring(1), value);

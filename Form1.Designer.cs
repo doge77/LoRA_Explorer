@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -82,6 +81,8 @@
             this.OpenSettingFormButton = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.UpdateCurrentRootButton = new System.Windows.Forms.Button();
+            this.QuickDirectionComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -631,8 +632,6 @@
             // 
             this.CurrentItemPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CurrentItemPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CurrentItemPictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("CurrentItemPictureBox.ErrorImage")));
-            this.CurrentItemPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("CurrentItemPictureBox.InitialImage")));
             this.CurrentItemPictureBox.Location = new System.Drawing.Point(5, 2);
             this.CurrentItemPictureBox.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.CurrentItemPictureBox.Name = "CurrentItemPictureBox";
@@ -944,11 +943,40 @@
             this.UpdateCurrentRootButton.UseVisualStyleBackColor = false;
             this.UpdateCurrentRootButton.Click += new System.EventHandler(this.UpdateCurrentRootButton_Click);
             // 
+            // QuickDirectionComboBox
+            // 
+            this.QuickDirectionComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.QuickDirectionComboBox.BackColor = System.Drawing.Color.White;
+            this.QuickDirectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.QuickDirectionComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuickDirectionComboBox.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.QuickDirectionComboBox.FormattingEnabled = true;
+            this.QuickDirectionComboBox.ItemHeight = 12;
+            this.QuickDirectionComboBox.Location = new System.Drawing.Point(591, 29);
+            this.QuickDirectionComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 0);
+            this.QuickDirectionComboBox.Name = "QuickDirectionComboBox";
+            this.QuickDirectionComboBox.Size = new System.Drawing.Size(127, 20);
+            this.QuickDirectionComboBox.TabIndex = 2;
+            this.QuickDirectionComboBox.TabStop = false;
+            this.QuickDirectionComboBox.SelectedIndexChanged += new System.EventHandler(this.QuickDirectionComboBox_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(532, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 12);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "빠른 경로:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 847);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.QuickDirectionComboBox);
             this.Controls.Add(this.UpdateCurrentRootButton);
             this.Controls.Add(this.OpenSettingFormButton);
             this.Controls.Add(this.StatusLabel);
@@ -1059,6 +1087,8 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button UpdateCurrentRootButton;
         private System.Windows.Forms.Button GetCivitaiInfoButton;
+        private System.Windows.Forms.ComboBox QuickDirectionComboBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 
