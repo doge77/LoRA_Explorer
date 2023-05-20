@@ -707,7 +707,24 @@ namespace LoRA_Explorer {
         public void PromptClick(object sender, EventArgs e) {
             Button button = sender as Button;
 
-            string prompt = button.Text.Replace("\n", "\r\n");
+            string prompt = button.Text;
+
+            // 가중치(:n)가 범위형식(n~m)이면 평균값으로
+            string weightPattern = @":(\-?\d+(\.\d+)?)(~(\-?\d+(\.\d+)?))?";
+            prompt = Regex.Replace(prompt, weightPattern, match => {
+                string firstNumString = match.Groups[1].Value;
+                string secondNumString = match.Groups[4].Value;
+
+                if (!string.IsNullOrEmpty(secondNumString)) {
+                    double min = double.Parse(firstNumString);
+                    double max = double.Parse(secondNumString);
+                    double weight = Math.Round(((min + max) / 2), 2);
+                    return $":{weight}";
+                }
+                return match.Value;
+            });
+
+            prompt = prompt.Replace("\n", "\r\n");
 
             // settings
             if (settings["clear_promptBox_when_select_negative_prompt"]) {
@@ -2054,6 +2071,7 @@ namespace LoRA_Explorer {
                 string key = prompt.Key;
                 string value = prompt.Value;
 
+                /* 프롬박스로 옮길 때 해야지;;
                 string weightPattern = @"<lora:__filename__:(\-?\d+(\.\d+)?)(~(\-?\d+(\.\d+)?))?>";
                 Match match = Regex.Match(value, weightPattern);
 
@@ -2068,6 +2086,7 @@ namespace LoRA_Explorer {
                         value = value.Replace(match.Value, $"<lora:__filename__:{weight}>");
                     }
                 }
+                */
 
                 key = key.Replace("__filename__", item.modelName);
                 value = value.Replace("__filename__", item.modelName); ;
