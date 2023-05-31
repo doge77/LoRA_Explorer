@@ -24,8 +24,8 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.LocalTreeView = new System.Windows.Forms.TreeView();
@@ -136,8 +136,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer4);
             this.splitContainer1.Panel2MinSize = 200;
-            this.splitContainer1.Size = new System.Drawing.Size(703, 683);
-            this.splitContainer1.SplitterDistance = 344;
+            this.splitContainer1.Size = new System.Drawing.Size(691, 646);
+            this.splitContainer1.SplitterDistance = 338;
             this.splitContainer1.TabIndex = 0;
             this.splitContainer1.TabStop = false;
             // 
@@ -159,8 +159,8 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.tableLayoutPanel4);
             this.splitContainer3.Panel2MinSize = 150;
-            this.splitContainer3.Size = new System.Drawing.Size(342, 681);
-            this.splitContainer3.SplitterDistance = 92;
+            this.splitContainer3.Size = new System.Drawing.Size(336, 644);
+            this.splitContainer3.SplitterDistance = 87;
             this.splitContainer3.SplitterWidth = 2;
             this.splitContainer3.TabIndex = 0;
             this.splitContainer3.TabStop = false;
@@ -172,7 +172,7 @@
             this.LocalTreeView.Location = new System.Drawing.Point(2, 2);
             this.LocalTreeView.Margin = new System.Windows.Forms.Padding(0);
             this.LocalTreeView.Name = "LocalTreeView";
-            this.LocalTreeView.Size = new System.Drawing.Size(338, 88);
+            this.LocalTreeView.Size = new System.Drawing.Size(332, 83);
             this.LocalTreeView.TabIndex = 0;
             this.LocalTreeView.TabStop = false;
             this.LocalTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.LocalTreeView_AfterSelect);
@@ -190,21 +190,21 @@
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 4;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(342, 587);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(336, 555);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // ItemFlowLayout
             // 
             this.ItemFlowLayout.AutoScroll = true;
             this.ItemFlowLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ItemFlowLayout.Location = new System.Drawing.Point(0, 30);
+            this.ItemFlowLayout.Location = new System.Drawing.Point(0, 31);
             this.ItemFlowLayout.Margin = new System.Windows.Forms.Padding(0);
             this.ItemFlowLayout.Name = "ItemFlowLayout";
-            this.ItemFlowLayout.Size = new System.Drawing.Size(342, 482);
+            this.ItemFlowLayout.Size = new System.Drawing.Size(336, 449);
             this.ItemFlowLayout.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -217,12 +217,12 @@
             this.tableLayoutPanel5.Controls.Add(this.SearchButton, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.SearchTextBox, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 552);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 520);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(342, 35);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(336, 35);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // SearchCategory
@@ -251,7 +251,7 @@
             this.SearchButton.BackColor = System.Drawing.Color.White;
             this.SearchButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchButton.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.SearchButton.Location = new System.Drawing.Point(250, 0);
+            this.SearchButton.Location = new System.Drawing.Point(244, 0);
             this.SearchButton.Margin = new System.Windows.Forms.Padding(0);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(92, 35);
@@ -266,10 +266,10 @@
             this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SearchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchTextBox.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.SearchTextBox.Location = new System.Drawing.Point(84, 6);
-            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 0);
+            this.SearchTextBox.Location = new System.Drawing.Point(84, 7);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4, 7, 4, 0);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(162, 22);
+            this.SearchTextBox.Size = new System.Drawing.Size(156, 22);
             this.SearchTextBox.TabIndex = 1;
             this.SearchTextBox.TabStop = false;
             this.SearchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
@@ -287,17 +287,17 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(342, 30);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(336, 31);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // SortItemsButton
             // 
             this.SortItemsButton.BackColor = System.Drawing.Color.White;
             this.SortItemsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SortItemsButton.Location = new System.Drawing.Point(221, 0);
+            this.SortItemsButton.Location = new System.Drawing.Point(215, 0);
             this.SortItemsButton.Margin = new System.Windows.Forms.Padding(0);
             this.SortItemsButton.Name = "SortItemsButton";
-            this.SortItemsButton.Size = new System.Drawing.Size(121, 30);
+            this.SortItemsButton.Size = new System.Drawing.Size(121, 31);
             this.SortItemsButton.TabIndex = 0;
             this.SortItemsButton.TabStop = false;
             this.SortItemsButton.Text = "정렬하기";
@@ -325,7 +325,7 @@
             this.SortMethodCheckBox.Location = new System.Drawing.Point(2, 2);
             this.SortMethodCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 0);
             this.SortMethodCheckBox.Name = "SortMethodCheckBox";
-            this.SortMethodCheckBox.Size = new System.Drawing.Size(217, 24);
+            this.SortMethodCheckBox.Size = new System.Drawing.Size(211, 24);
             this.SortMethodCheckBox.TabIndex = 1;
             this.SortMethodCheckBox.TabStop = false;
             this.SortMethodCheckBox.SelectedIndexChanged += new System.EventHandler(this.SortMethodCheckBox_SelectedIndexChanged);
@@ -340,12 +340,12 @@
             this.tableLayoutPanel10.Controls.Add(this.NextPageButton, 2, 0);
             this.tableLayoutPanel10.Controls.Add(this.CurrentPageLabel, 1, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 512);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 480);
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(342, 40);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(336, 40);
             this.tableLayoutPanel10.TabIndex = 3;
             // 
             // PreviousPageButton
@@ -356,7 +356,7 @@
             this.PreviousPageButton.Location = new System.Drawing.Point(0, 0);
             this.PreviousPageButton.Margin = new System.Windows.Forms.Padding(0);
             this.PreviousPageButton.Name = "PreviousPageButton";
-            this.PreviousPageButton.Size = new System.Drawing.Size(136, 40);
+            this.PreviousPageButton.Size = new System.Drawing.Size(134, 40);
             this.PreviousPageButton.TabIndex = 1;
             this.PreviousPageButton.TabStop = false;
             this.PreviousPageButton.Text = "◀ 이전";
@@ -368,10 +368,10 @@
             this.NextPageButton.BackColor = System.Drawing.Color.Gainsboro;
             this.NextPageButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NextPageButton.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.NextPageButton.Location = new System.Drawing.Point(204, 0);
+            this.NextPageButton.Location = new System.Drawing.Point(201, 0);
             this.NextPageButton.Margin = new System.Windows.Forms.Padding(0);
             this.NextPageButton.Name = "NextPageButton";
-            this.NextPageButton.Size = new System.Drawing.Size(138, 40);
+            this.NextPageButton.Size = new System.Drawing.Size(135, 40);
             this.NextPageButton.TabIndex = 2;
             this.NextPageButton.TabStop = false;
             this.NextPageButton.Text = "다음 ▶";
@@ -383,10 +383,10 @@
             this.CurrentPageLabel.AutoSize = true;
             this.CurrentPageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CurrentPageLabel.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.CurrentPageLabel.Location = new System.Drawing.Point(139, 3);
+            this.CurrentPageLabel.Location = new System.Drawing.Point(137, 3);
             this.CurrentPageLabel.Margin = new System.Windows.Forms.Padding(3);
             this.CurrentPageLabel.Name = "CurrentPageLabel";
-            this.CurrentPageLabel.Size = new System.Drawing.Size(62, 34);
+            this.CurrentPageLabel.Size = new System.Drawing.Size(61, 34);
             this.CurrentPageLabel.TabIndex = 3;
             this.CurrentPageLabel.Text = "0 page";
             this.CurrentPageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -408,7 +408,7 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.metroTabControl1);
             this.splitContainer4.Panel2MinSize = 264;
-            this.splitContainer4.Size = new System.Drawing.Size(353, 681);
+            this.splitContainer4.Size = new System.Drawing.Size(347, 644);
             this.splitContainer4.SplitterDistance = 255;
             this.splitContainer4.SplitterWidth = 2;
             this.splitContainer4.TabIndex = 0;
@@ -427,7 +427,7 @@
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(353, 255);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(347, 255);
             this.tableLayoutPanel6.TabIndex = 3;
             // 
             // tableLayoutPanel7
@@ -453,17 +453,17 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(353, 70);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(347, 70);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // GetCivitaiInfoButton
             // 
             this.GetCivitaiInfoButton.BackColor = System.Drawing.Color.White;
             this.GetCivitaiInfoButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GetCivitaiInfoButton.Location = new System.Drawing.Point(91, 37);
+            this.GetCivitaiInfoButton.Location = new System.Drawing.Point(89, 37);
             this.GetCivitaiInfoButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.GetCivitaiInfoButton.Name = "GetCivitaiInfoButton";
-            this.GetCivitaiInfoButton.Size = new System.Drawing.Size(82, 33);
+            this.GetCivitaiInfoButton.Size = new System.Drawing.Size(80, 33);
             this.GetCivitaiInfoButton.TabIndex = 6;
             this.GetCivitaiInfoButton.TabStop = false;
             this.GetCivitaiInfoButton.Text = "Civitai 정보 불러오기";
@@ -475,10 +475,10 @@
             this.OpenURLButton.BackColor = System.Drawing.Color.White;
             this.OpenURLButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.OpenURLButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OpenURLButton.Location = new System.Drawing.Point(179, 37);
+            this.OpenURLButton.Location = new System.Drawing.Point(175, 37);
             this.OpenURLButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.OpenURLButton.Name = "OpenURLButton";
-            this.OpenURLButton.Size = new System.Drawing.Size(82, 33);
+            this.OpenURLButton.Size = new System.Drawing.Size(80, 33);
             this.OpenURLButton.TabIndex = 6;
             this.OpenURLButton.TabStop = false;
             this.OpenURLButton.Text = "주소 열기";
@@ -492,7 +492,7 @@
             this.ChangeFileNameButton.Location = new System.Drawing.Point(6, 0);
             this.ChangeFileNameButton.Margin = new System.Windows.Forms.Padding(6, 0, 3, 2);
             this.ChangeFileNameButton.Name = "ChangeFileNameButton";
-            this.ChangeFileNameButton.Size = new System.Drawing.Size(79, 33);
+            this.ChangeFileNameButton.Size = new System.Drawing.Size(77, 33);
             this.ChangeFileNameButton.TabIndex = 0;
             this.ChangeFileNameButton.TabStop = false;
             this.ChangeFileNameButton.Text = "파일명 수정";
@@ -503,10 +503,10 @@
             // 
             this.ChangeFileDirectionButton.BackColor = System.Drawing.Color.White;
             this.ChangeFileDirectionButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ChangeFileDirectionButton.Location = new System.Drawing.Point(91, 0);
+            this.ChangeFileDirectionButton.Location = new System.Drawing.Point(89, 0);
             this.ChangeFileDirectionButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 2);
             this.ChangeFileDirectionButton.Name = "ChangeFileDirectionButton";
-            this.ChangeFileDirectionButton.Size = new System.Drawing.Size(82, 33);
+            this.ChangeFileDirectionButton.Size = new System.Drawing.Size(80, 33);
             this.ChangeFileDirectionButton.TabIndex = 1;
             this.ChangeFileDirectionButton.TabStop = false;
             this.ChangeFileDirectionButton.Text = "파일 이동";
@@ -520,7 +520,7 @@
             this.OpenCurrentFolderButton.Location = new System.Drawing.Point(6, 37);
             this.OpenCurrentFolderButton.Margin = new System.Windows.Forms.Padding(6, 2, 3, 0);
             this.OpenCurrentFolderButton.Name = "OpenCurrentFolderButton";
-            this.OpenCurrentFolderButton.Size = new System.Drawing.Size(79, 33);
+            this.OpenCurrentFolderButton.Size = new System.Drawing.Size(77, 33);
             this.OpenCurrentFolderButton.TabIndex = 6;
             this.OpenCurrentFolderButton.TabStop = false;
             this.OpenCurrentFolderButton.Text = "폴더 열기";
@@ -531,7 +531,7 @@
             // 
             this.CopyFileNameButton.BackColor = System.Drawing.Color.White;
             this.CopyFileNameButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CopyFileNameButton.Location = new System.Drawing.Point(267, 0);
+            this.CopyFileNameButton.Location = new System.Drawing.Point(261, 0);
             this.CopyFileNameButton.Margin = new System.Windows.Forms.Padding(3, 0, 6, 2);
             this.CopyFileNameButton.Name = "CopyFileNameButton";
             this.CopyFileNameButton.Size = new System.Drawing.Size(80, 33);
@@ -545,10 +545,10 @@
             // 
             this.DeleteItemButton.BackColor = System.Drawing.Color.White;
             this.DeleteItemButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DeleteItemButton.Location = new System.Drawing.Point(179, 0);
+            this.DeleteItemButton.Location = new System.Drawing.Point(175, 0);
             this.DeleteItemButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 2);
             this.DeleteItemButton.Name = "DeleteItemButton";
-            this.DeleteItemButton.Size = new System.Drawing.Size(82, 33);
+            this.DeleteItemButton.Size = new System.Drawing.Size(80, 33);
             this.DeleteItemButton.TabIndex = 2;
             this.DeleteItemButton.TabStop = false;
             this.DeleteItemButton.Text = "파일 삭제";
@@ -559,7 +559,7 @@
             // 
             this.CopyDataButton.BackColor = System.Drawing.Color.White;
             this.CopyDataButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CopyDataButton.Location = new System.Drawing.Point(267, 37);
+            this.CopyDataButton.Location = new System.Drawing.Point(261, 37);
             this.CopyDataButton.Margin = new System.Windows.Forms.Padding(3, 2, 6, 0);
             this.CopyDataButton.Name = "CopyDataButton";
             this.CopyDataButton.Size = new System.Drawing.Size(80, 33);
@@ -581,7 +581,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(347, 179);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(341, 179);
             this.tableLayoutPanel9.TabIndex = 1;
             // 
             // CurrentItemFlowLayout
@@ -593,7 +593,7 @@
             this.CurrentItemFlowLayout.Margin = new System.Windows.Forms.Padding(0);
             this.CurrentItemFlowLayout.Name = "CurrentItemFlowLayout";
             this.CurrentItemFlowLayout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.CurrentItemFlowLayout.Size = new System.Drawing.Size(237, 179);
+            this.CurrentItemFlowLayout.Size = new System.Drawing.Size(231, 179);
             this.CurrentItemFlowLayout.TabIndex = 1;
             this.CurrentItemFlowLayout.WrapContents = false;
             // 
@@ -651,7 +651,7 @@
             this.metroTabControl1.MinimumSize = new System.Drawing.Size(0, 200);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(353, 424);
+            this.metroTabControl1.Size = new System.Drawing.Size(347, 387);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.TabStop = false;
             this.metroTabControl1.UseSelectable = true;
@@ -665,7 +665,7 @@
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(345, 382);
+            this.metroTabPage1.Size = new System.Drawing.Size(339, 345);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "프롬프트";
             this.metroTabPage1.VerticalScrollbarBarColor = false;
@@ -682,7 +682,7 @@
             this.PromptFlowLayout.Margin = new System.Windows.Forms.Padding(0);
             this.PromptFlowLayout.Name = "PromptFlowLayout";
             this.PromptFlowLayout.Padding = new System.Windows.Forms.Padding(5);
-            this.PromptFlowLayout.Size = new System.Drawing.Size(345, 382);
+            this.PromptFlowLayout.Size = new System.Drawing.Size(339, 345);
             this.PromptFlowLayout.TabIndex = 0;
             this.PromptFlowLayout.WrapContents = false;
             // 
@@ -695,7 +695,7 @@
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Margin = new System.Windows.Forms.Padding(0);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(345, 382);
+            this.metroTabPage2.Size = new System.Drawing.Size(284, 357);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "프롬프트 수정";
             this.metroTabPage2.VerticalScrollbarBarColor = false;
@@ -717,17 +717,17 @@
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(345, 382);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(284, 357);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // SavePromptDataButton
             // 
             this.SavePromptDataButton.BackColor = System.Drawing.Color.White;
             this.SavePromptDataButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SavePromptDataButton.Location = new System.Drawing.Point(0, 342);
+            this.SavePromptDataButton.Location = new System.Drawing.Point(0, 317);
             this.SavePromptDataButton.Margin = new System.Windows.Forms.Padding(0);
             this.SavePromptDataButton.Name = "SavePromptDataButton";
-            this.SavePromptDataButton.Size = new System.Drawing.Size(345, 40);
+            this.SavePromptDataButton.Size = new System.Drawing.Size(284, 40);
             this.SavePromptDataButton.TabIndex = 3;
             this.SavePromptDataButton.TabStop = false;
             this.SavePromptDataButton.Text = "변경 사항 저장";
@@ -746,7 +746,7 @@
             this.PromptSheet.Margin = new System.Windows.Forms.Padding(0);
             this.PromptSheet.Name = "PromptSheet";
             this.PromptSheet.RowTemplate.Height = 23;
-            this.PromptSheet.Size = new System.Drawing.Size(345, 342);
+            this.PromptSheet.Size = new System.Drawing.Size(284, 317);
             this.PromptSheet.TabIndex = 2;
             this.PromptSheet.TabStop = false;
             this.PromptSheet.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.PromptSheet_CellValueChanged);
@@ -760,8 +760,8 @@
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column2.HeaderText = "프롬프트";
             this.Column2.Name = "Column2";
             // 
@@ -773,7 +773,7 @@
             this.metroTabPage4.HorizontalScrollbarSize = 0;
             this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(345, 382);
+            this.metroTabPage4.Size = new System.Drawing.Size(284, 357);
             this.metroTabPage4.TabIndex = 3;
             this.metroTabPage4.Text = "정보 수정";
             this.metroTabPage4.VerticalScrollbarBarColor = false;
@@ -793,17 +793,17 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(345, 382);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(284, 357);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // SaveItemDataChangeButton
             // 
             this.SaveItemDataChangeButton.BackColor = System.Drawing.Color.White;
             this.SaveItemDataChangeButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SaveItemDataChangeButton.Location = new System.Drawing.Point(0, 342);
+            this.SaveItemDataChangeButton.Location = new System.Drawing.Point(0, 317);
             this.SaveItemDataChangeButton.Margin = new System.Windows.Forms.Padding(0);
             this.SaveItemDataChangeButton.Name = "SaveItemDataChangeButton";
-            this.SaveItemDataChangeButton.Size = new System.Drawing.Size(345, 40);
+            this.SaveItemDataChangeButton.Size = new System.Drawing.Size(284, 40);
             this.SaveItemDataChangeButton.TabIndex = 0;
             this.SaveItemDataChangeButton.TabStop = false;
             this.SaveItemDataChangeButton.Text = "변경 사항 저장";
@@ -824,7 +824,7 @@
             this.ItemAttributeGrid.Margin = new System.Windows.Forms.Padding(0);
             this.ItemAttributeGrid.Name = "ItemAttributeGrid";
             this.ItemAttributeGrid.RowTemplate.Height = 23;
-            this.ItemAttributeGrid.Size = new System.Drawing.Size(345, 342);
+            this.ItemAttributeGrid.Size = new System.Drawing.Size(284, 317);
             this.ItemAttributeGrid.TabIndex = 1;
             this.ItemAttributeGrid.TabStop = false;
             this.ItemAttributeGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemAttributeGrid_CellValueChanged);
@@ -840,8 +840,8 @@
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column4.HeaderText = "값";
             this.Column4.Name = "Column4";
             this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -866,8 +866,8 @@
             this.splitContainer2.Panel2.Controls.Add(this.CopyButton);
             this.splitContainer2.Panel2.Padding = new System.Windows.Forms.Padding(3);
             this.splitContainer2.Panel2MinSize = 60;
-            this.splitContainer2.Size = new System.Drawing.Size(703, 752);
-            this.splitContainer2.SplitterDistance = 683;
+            this.splitContainer2.Size = new System.Drawing.Size(691, 712);
+            this.splitContainer2.SplitterDistance = 646;
             this.splitContainer2.TabIndex = 1;
             this.splitContainer2.TabStop = false;
             // 
@@ -878,7 +878,7 @@
             this.PromptBox.Location = new System.Drawing.Point(3, 3);
             this.PromptBox.Multiline = true;
             this.PromptBox.Name = "PromptBox";
-            this.PromptBox.Size = new System.Drawing.Size(594, 57);
+            this.PromptBox.Size = new System.Drawing.Size(582, 54);
             this.PromptBox.TabIndex = 2;
             this.PromptBox.TabStop = false;
             this.PromptBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PromptBox_KeyDown);
@@ -888,9 +888,9 @@
             this.CopyButton.BackColor = System.Drawing.Color.White;
             this.CopyButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.CopyButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CopyButton.Location = new System.Drawing.Point(597, 3);
+            this.CopyButton.Location = new System.Drawing.Point(585, 3);
             this.CopyButton.Name = "CopyButton";
-            this.CopyButton.Size = new System.Drawing.Size(101, 57);
+            this.CopyButton.Size = new System.Drawing.Size(101, 54);
             this.CopyButton.TabIndex = 1;
             this.CopyButton.TabStop = false;
             this.CopyButton.Text = "프롬프트\r\n복사";
@@ -900,9 +900,9 @@
             // ReloadingButton
             // 
             this.ReloadingButton.BackColor = System.Drawing.Color.White;
-            this.ReloadingButton.Location = new System.Drawing.Point(240, 23);
+            this.ReloadingButton.Location = new System.Drawing.Point(241, 35);
             this.ReloadingButton.Name = "ReloadingButton";
-            this.ReloadingButton.Size = new System.Drawing.Size(90, 30);
+            this.ReloadingButton.Size = new System.Drawing.Size(99, 22);
             this.ReloadingButton.TabIndex = 3;
             this.ReloadingButton.TabStop = false;
             this.ReloadingButton.Text = "경로 재설정";
@@ -913,7 +913,7 @@
             // 
             this.StatusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(13, 827);
+            this.StatusLabel.Location = new System.Drawing.Point(13, 787);
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(17, 12);
             this.StatusLabel.TabIndex = 4;
@@ -922,9 +922,9 @@
             // OpenSettingFormButton
             // 
             this.OpenSettingFormButton.BackColor = System.Drawing.Color.White;
-            this.OpenSettingFormButton.Location = new System.Drawing.Point(445, 23);
+            this.OpenSettingFormButton.Location = new System.Drawing.Point(457, 35);
             this.OpenSettingFormButton.Name = "OpenSettingFormButton";
-            this.OpenSettingFormButton.Size = new System.Drawing.Size(66, 30);
+            this.OpenSettingFormButton.Size = new System.Drawing.Size(65, 22);
             this.OpenSettingFormButton.TabIndex = 3;
             this.OpenSettingFormButton.TabStop = false;
             this.OpenSettingFormButton.Text = "설정";
@@ -934,9 +934,9 @@
             // UpdateCurrentRootButton
             // 
             this.UpdateCurrentRootButton.BackColor = System.Drawing.Color.White;
-            this.UpdateCurrentRootButton.Location = new System.Drawing.Point(336, 23);
+            this.UpdateCurrentRootButton.Location = new System.Drawing.Point(346, 35);
             this.UpdateCurrentRootButton.Name = "UpdateCurrentRootButton";
-            this.UpdateCurrentRootButton.Size = new System.Drawing.Size(103, 30);
+            this.UpdateCurrentRootButton.Size = new System.Drawing.Size(106, 22);
             this.UpdateCurrentRootButton.TabIndex = 5;
             this.UpdateCurrentRootButton.TabStop = false;
             this.UpdateCurrentRootButton.Text = "현재 경로 갱신";
@@ -945,28 +945,27 @@
             // 
             // QuickDirectionComboBox
             // 
-            this.QuickDirectionComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.QuickDirectionComboBox.BackColor = System.Drawing.Color.White;
             this.QuickDirectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.QuickDirectionComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.QuickDirectionComboBox.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.QuickDirectionComboBox.Font = new System.Drawing.Font("굴림", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.QuickDirectionComboBox.FormattingEnabled = true;
-            this.QuickDirectionComboBox.ItemHeight = 12;
-            this.QuickDirectionComboBox.Location = new System.Drawing.Point(591, 29);
+            this.QuickDirectionComboBox.ItemHeight = 11;
+            this.QuickDirectionComboBox.Location = new System.Drawing.Point(298, 13);
             this.QuickDirectionComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 0);
             this.QuickDirectionComboBox.Name = "QuickDirectionComboBox";
-            this.QuickDirectionComboBox.Size = new System.Drawing.Size(127, 20);
+            this.QuickDirectionComboBox.Size = new System.Drawing.Size(113, 19);
             this.QuickDirectionComboBox.TabIndex = 2;
             this.QuickDirectionComboBox.TabStop = false;
             this.QuickDirectionComboBox.SelectedIndexChanged += new System.EventHandler(this.QuickDirectionComboBox_SelectedIndexChanged);
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(532, 34);
+            this.label1.Font = new System.Drawing.Font("굴림", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(244, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 12);
+            this.label1.Size = new System.Drawing.Size(56, 11);
             this.label1.TabIndex = 6;
             this.label1.Text = "빠른 경로:";
             // 
@@ -974,7 +973,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 847);
+            this.ClientSize = new System.Drawing.Size(721, 807);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.QuickDirectionComboBox);
             this.Controls.Add(this.UpdateCurrentRootButton);

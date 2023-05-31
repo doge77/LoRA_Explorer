@@ -40,6 +40,7 @@
             this.ShowGradeOnThumbnailCheckBox = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ItemsPerPageTextBox = new System.Windows.Forms.NumericUpDown();
+            this.ChangeLoraToLycoCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.ItemWidthTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemHeightTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsPerPageTextBox)).BeginInit();
@@ -94,7 +95,7 @@
             // 
             this.ItemWidthTrackBar.AutoSize = false;
             this.ItemWidthTrackBar.LargeChange = 1;
-            this.ItemWidthTrackBar.Location = new System.Drawing.Point(124, 178);
+            this.ItemWidthTrackBar.Location = new System.Drawing.Point(124, 196);
             this.ItemWidthTrackBar.Maximum = 30;
             this.ItemWidthTrackBar.Minimum = 10;
             this.ItemWidthTrackBar.Name = "ItemWidthTrackBar";
@@ -108,7 +109,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 184);
+            this.label1.Location = new System.Drawing.Point(21, 202);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 12);
             this.label1.TabIndex = 11;
@@ -117,7 +118,7 @@
             // ItemWidthTrackBarLabel
             // 
             this.ItemWidthTrackBarLabel.AutoSize = true;
-            this.ItemWidthTrackBarLabel.Location = new System.Drawing.Point(297, 183);
+            this.ItemWidthTrackBarLabel.Location = new System.Drawing.Point(297, 201);
             this.ItemWidthTrackBarLabel.Name = "ItemWidthTrackBarLabel";
             this.ItemWidthTrackBarLabel.Size = new System.Drawing.Size(23, 12);
             this.ItemWidthTrackBarLabel.TabIndex = 12;
@@ -126,7 +127,7 @@
             // ItemHeightTrackBarLabel
             // 
             this.ItemHeightTrackBarLabel.AutoSize = true;
-            this.ItemHeightTrackBarLabel.Location = new System.Drawing.Point(297, 212);
+            this.ItemHeightTrackBarLabel.Location = new System.Drawing.Point(297, 228);
             this.ItemHeightTrackBarLabel.Name = "ItemHeightTrackBarLabel";
             this.ItemHeightTrackBarLabel.Size = new System.Drawing.Size(23, 12);
             this.ItemHeightTrackBarLabel.TabIndex = 15;
@@ -135,7 +136,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 213);
+            this.label4.Location = new System.Drawing.Point(21, 229);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 12);
             this.label4.TabIndex = 14;
@@ -145,7 +146,7 @@
             // 
             this.ItemHeightTrackBar.AutoSize = false;
             this.ItemHeightTrackBar.LargeChange = 1;
-            this.ItemHeightTrackBar.Location = new System.Drawing.Point(124, 207);
+            this.ItemHeightTrackBar.Location = new System.Drawing.Point(124, 223);
             this.ItemHeightTrackBar.Maximum = 40;
             this.ItemHeightTrackBar.Minimum = 10;
             this.ItemHeightTrackBar.Name = "ItemHeightTrackBar";
@@ -193,7 +194,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 243);
+            this.label2.Location = new System.Drawing.Point(21, 259);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 12);
             this.label2.TabIndex = 19;
@@ -201,17 +202,29 @@
             // 
             // ItemsPerPageTextBox
             // 
-            this.ItemsPerPageTextBox.Location = new System.Drawing.Point(182, 239);
+            this.ItemsPerPageTextBox.Location = new System.Drawing.Point(182, 255);
             this.ItemsPerPageTextBox.Name = "ItemsPerPageTextBox";
             this.ItemsPerPageTextBox.Size = new System.Drawing.Size(52, 21);
             this.ItemsPerPageTextBox.TabIndex = 21;
             this.ItemsPerPageTextBox.ValueChanged += new System.EventHandler(this.ItemsPerPageTextBox_ValueChanged);
+            // 
+            // ChangeLoraToLycoCheckBox
+            // 
+            this.ChangeLoraToLycoCheckBox.AutoSize = true;
+            this.ChangeLoraToLycoCheckBox.Location = new System.Drawing.Point(23, 173);
+            this.ChangeLoraToLycoCheckBox.Name = "ChangeLoraToLycoCheckBox";
+            this.ChangeLoraToLycoCheckBox.Size = new System.Drawing.Size(177, 16);
+            this.ChangeLoraToLycoCheckBox.TabIndex = 22;
+            this.ChangeLoraToLycoCheckBox.Text = "\"<lora:\"를 \"<lyco:\"로 바꾸기";
+            this.ChangeLoraToLycoCheckBox.UseVisualStyleBackColor = true;
+            this.ChangeLoraToLycoCheckBox.CheckedChanged += new System.EventHandler(this.ChangeLoraToLycoCheckBox_CheckedChanged);
             // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 400);
+            this.Controls.Add(this.ChangeLoraToLycoCheckBox);
             this.Controls.Add(this.ItemsPerPageTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ShowGradeOnThumbnailCheckBox);
@@ -258,5 +271,6 @@
         private System.Windows.Forms.CheckBox ShowGradeOnThumbnailCheckBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown ItemsPerPageTextBox;
+        private System.Windows.Forms.CheckBox ChangeLoraToLycoCheckBox;
     }
 }

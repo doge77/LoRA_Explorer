@@ -47,6 +47,9 @@ namespace LoRA_Explorer {
             if (settings["show_star_grade_on_thumbnail"] == true) {
                 ShowGradeOnThumbnailCheckBox.Checked = true;
             }
+            if (settings["change_lora_to_lyco"] == true) {
+                ChangeLoraToLycoCheckBox.Checked = true;
+            }
             int curWidth = settings["item_width"] / 10;
             if (curWidth >= ItemWidthTrackBar.Minimum && curWidth <= ItemWidthTrackBar.Maximum) {
                 ItemWidthTrackBar.Value = curWidth;
@@ -131,6 +134,14 @@ namespace LoRA_Explorer {
             isShowGradeOptionChanged = true;
             Console.WriteLine($"setting changed: show_star_grade_on_thumbnail to {ShowGradeOnThumbnailCheckBox.Checked}");
         }
+        private void ChangeLoraToLycoCheckBox_CheckedChanged(object sender, EventArgs e) {
+            if (ChangeLoraToLycoCheckBox.Checked == true) {
+                settings["change_lora_to_lyco"] = true;
+            } else if (ChangeLoraToLycoCheckBox.Checked == false) {
+                settings["change_lora_to_lyco"] = false;
+            }
+            Console.WriteLine($"setting changed: change_lora_to_lyco to {ChangeLoraToLycoCheckBox.Checked}");
+        }
 
 
         // data 파일 일괄삭제
@@ -184,6 +195,12 @@ namespace LoRA_Explorer {
             text += "\nshow_star_grade_on_thumbnail = ";
             if (settings.ContainsKey("show_star_grade_on_thumbnail")) {
                 text += settings["show_star_grade_on_thumbnail"].ToString();
+            } else {
+                text += "false";
+            }
+            text += "\nchange_lora_to_lyco = ";
+            if (settings.ContainsKey("change_lora_to_lyco")) {
+                text += settings["change_lora_to_lyco"].ToString();
             } else {
                 text += "false";
             }
