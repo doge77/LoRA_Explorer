@@ -24,8 +24,8 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.LocalTreeView = new System.Windows.Forms.TreeView();
@@ -695,7 +695,7 @@
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Margin = new System.Windows.Forms.Padding(0);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(284, 357);
+            this.metroTabPage2.Size = new System.Drawing.Size(339, 345);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "프롬프트 수정";
             this.metroTabPage2.VerticalScrollbarBarColor = false;
@@ -717,17 +717,17 @@
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(284, 357);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(339, 345);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // SavePromptDataButton
             // 
             this.SavePromptDataButton.BackColor = System.Drawing.Color.White;
             this.SavePromptDataButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SavePromptDataButton.Location = new System.Drawing.Point(0, 317);
+            this.SavePromptDataButton.Location = new System.Drawing.Point(0, 305);
             this.SavePromptDataButton.Margin = new System.Windows.Forms.Padding(0);
             this.SavePromptDataButton.Name = "SavePromptDataButton";
-            this.SavePromptDataButton.Size = new System.Drawing.Size(284, 40);
+            this.SavePromptDataButton.Size = new System.Drawing.Size(339, 40);
             this.SavePromptDataButton.TabIndex = 3;
             this.SavePromptDataButton.TabStop = false;
             this.SavePromptDataButton.Text = "변경 사항 저장";
@@ -746,7 +746,7 @@
             this.PromptSheet.Margin = new System.Windows.Forms.Padding(0);
             this.PromptSheet.Name = "PromptSheet";
             this.PromptSheet.RowTemplate.Height = 23;
-            this.PromptSheet.Size = new System.Drawing.Size(284, 317);
+            this.PromptSheet.Size = new System.Drawing.Size(339, 305);
             this.PromptSheet.TabIndex = 2;
             this.PromptSheet.TabStop = false;
             this.PromptSheet.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.PromptSheet_CellValueChanged);
@@ -760,8 +760,8 @@
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column2.HeaderText = "프롬프트";
             this.Column2.Name = "Column2";
             // 
@@ -773,7 +773,7 @@
             this.metroTabPage4.HorizontalScrollbarSize = 0;
             this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(284, 357);
+            this.metroTabPage4.Size = new System.Drawing.Size(339, 345);
             this.metroTabPage4.TabIndex = 3;
             this.metroTabPage4.Text = "정보 수정";
             this.metroTabPage4.VerticalScrollbarBarColor = false;
@@ -793,17 +793,17 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(284, 357);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(339, 345);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // SaveItemDataChangeButton
             // 
             this.SaveItemDataChangeButton.BackColor = System.Drawing.Color.White;
             this.SaveItemDataChangeButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SaveItemDataChangeButton.Location = new System.Drawing.Point(0, 317);
+            this.SaveItemDataChangeButton.Location = new System.Drawing.Point(0, 305);
             this.SaveItemDataChangeButton.Margin = new System.Windows.Forms.Padding(0);
             this.SaveItemDataChangeButton.Name = "SaveItemDataChangeButton";
-            this.SaveItemDataChangeButton.Size = new System.Drawing.Size(284, 40);
+            this.SaveItemDataChangeButton.Size = new System.Drawing.Size(339, 40);
             this.SaveItemDataChangeButton.TabIndex = 0;
             this.SaveItemDataChangeButton.TabStop = false;
             this.SaveItemDataChangeButton.Text = "변경 사항 저장";
@@ -824,7 +824,7 @@
             this.ItemAttributeGrid.Margin = new System.Windows.Forms.Padding(0);
             this.ItemAttributeGrid.Name = "ItemAttributeGrid";
             this.ItemAttributeGrid.RowTemplate.Height = 23;
-            this.ItemAttributeGrid.Size = new System.Drawing.Size(284, 317);
+            this.ItemAttributeGrid.Size = new System.Drawing.Size(339, 305);
             this.ItemAttributeGrid.TabIndex = 1;
             this.ItemAttributeGrid.TabStop = false;
             this.ItemAttributeGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemAttributeGrid_CellValueChanged);
@@ -840,8 +840,8 @@
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.HeaderText = "값";
             this.Column4.Name = "Column4";
             this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -984,7 +984,7 @@
             this.MinimumSize = new System.Drawing.Size(600, 620);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 35);
-            this.Text = "LORA EXPLORER 3.2";
+            this.Text = "LORA EXPLORER 3.3";
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
