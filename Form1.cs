@@ -16,6 +16,7 @@ using System.Net.Http;
 using System.Net;
 using System.Text.RegularExpressions;
 using MS.WindowsAPICodePack.Internal;
+using System.Drawing.Imaging;
 
 namespace LoRA_Explorer {
 
@@ -156,7 +157,7 @@ namespace LoRA_Explorer {
                     settings[key] = value;
                 }
             } catch {
-                string text = "clear_promptBox_when_changing_items = false\r\nclear_promptBox_when_select_negative_prompt = false\r\nsave_changes_immediately = false\r\ncopy_promptBox_when_select_prompt = false\r\nshow_star_grade_on_thumbnail = false\r\nchange_lora_to_lyco = true\r\nitem_width = 100\r\nitem_height = 150\r\nitems_per_page = 50";
+                string text = "clear_promptBox_when_changing_items = false\r\nclear_promptBox_when_select_negative_prompt = false\r\nsave_changes_immediately = false\r\ncopy_promptBox_when_select_prompt = false\r\nshow_star_grade_on_thumbnail = false\r\nchange_lora_to_lyco = false\r\nchange_jpg_to_png = false\r\nitem_width = 100\r\nitem_height = 150\r\nitems_per_page = 50";
                 File.WriteAllText(path, text);
                 settings["clear_promptBox_when_changing_items"] = false;
                 settings["clear_promptBox_when_select_negative_prompt"] = false;
@@ -164,6 +165,7 @@ namespace LoRA_Explorer {
                 settings["copy_promptBox_when_select_prompt"] = false;
                 settings["show_star_grade_on_thumbnail"] = false;
                 settings["change_lora_to_lyco"] = false;
+                settings["change_jpg_to_png"] = false;
                 settings["item_width"] = 100;
                 settings["item_height"] = 150;
                 settings["items_per_page"] = 50;
@@ -187,6 +189,9 @@ namespace LoRA_Explorer {
             }
             if (!settings.ContainsKey("change_lora_to_lyco")) {
                 settings["change_lora_to_lyco"] = false;
+            }
+            if (!settings.ContainsKey("change_jpg_to_png")) {
+                settings["change_jpg_to_png"] = false;
             }
             if (!settings.ContainsKey("item_width")) {
                 settings["item_width"] = 100;
@@ -424,8 +429,8 @@ namespace LoRA_Explorer {
                     item.imagePath = newPreviewPath;
                 }
 
-                Console.WriteLine("파일 이름 변경: " + item.modelName + "to " + newName);
-                SetStatus("파일 이름 변경: " + item.modelName + "to " + newName);
+                Console.WriteLine("파일 이름 변경: " + item.modelName + " -> " + newName);
+                SetStatus("파일 이름 변경: " + item.modelName + " -> " + newName);
 
                 item.modelName = newName;
 
@@ -1131,23 +1136,44 @@ namespace LoRA_Explorer {
                                 }
                             }
                         }
-
+                        // download thumbnail
                         if (currentItem.imagePath == null) {
-                            try {
-                                string imageUrl = json["images"][0]["url"].ToString();
-                                if (!String.IsNullOrEmpty(imageUrl)) {
-                                    string extension = Path.GetExtension(imageUrl);
-                                    string savePath = Path.Combine(currentItem.parentPath, currentItem.modelName + extension);
+                            if (settings["change_jpg_to_png"]) {
+                                try {
+                                    string imageUrl = json["images"][0]["url"].ToString();
+                                    using (WebClient WebClient = new WebClient()) {
+                                        byte[] imageData = WebClient.DownloadData(imageUrl);
+                                        using (MemoryStream stream = new MemoryStream(imageData)) {
+                                            using (Image originalImage = Image.FromStream(stream)) {
+                                                string savePath = Path.Combine(currentItem.parentPath, currentItem.modelName + ".png");
+                                                ImageFormat format = ImageFormat.Png;
+                                                originalImage.Save(savePath, format);
+                                                currentItem.imagePath = savePath;
+                                                currentItem.LoadImage();
+                                            }
+                                        }
+                                    }
+                                } catch {
 
-                                    WebClient webClient = new WebClient();
-                                    webClient.DownloadFile(imageUrl, savePath);
-                                    currentItem.imagePath = savePath;
-                                    currentItem.LoadImage();
-
-                                    itemInfo.UpdateUpperContiner();
                                 }
-                            } catch {
+                            } else {
+                                try {
+                                    string imageUrl = json["images"][0]["url"].ToString();
+                                    if (!String.IsNullOrEmpty(imageUrl)) {
+                                        string extension = Path.GetExtension(imageUrl);
+                                        string savePath = Path.Combine(currentItem.parentPath, currentItem.modelName + extension);
 
+                                        using (WebClient webClient = new WebClient()) {
+                                            webClient.DownloadFile(imageUrl, savePath);
+                                            currentItem.imagePath = savePath;
+                                            currentItem.LoadImage();
+                                        }
+
+                                        itemInfo.UpdateUpperContiner();
+                                    }
+                                } catch {
+
+                                }
                             }
                         }
                         SetStatus($"{currentItem.modelName}: Civitai 정보 불러오기 성공");

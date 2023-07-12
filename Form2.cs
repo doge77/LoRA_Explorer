@@ -31,6 +31,7 @@ namespace LoRA_Explorer {
             toolTip1.SetToolTip(SaveChangesInstantlyCheckBox, "셀이 편집되는 즉시 자동으로 .data 파일이 갱신됩니다.");
             toolTip1.SetToolTip(CopyPromptWhenSelectPromptCheckBox, "프롬프트 꾸러미를 클릭했을 때 자동으로 하단 프롬프트 창의 내용을 복사합니다.");
             toolTip1.SetToolTip(ItemsPerPageTextBox, "0 입력시 개수 제한 없음");
+            toolTip1.SetToolTip(ChangeJpgToPngCheckBox, "Civitai 정보 불러오기 기능을 이용할 때 썸네일 이미지를 내려받은 후 png 포맷으로 변환합니다.");
 
             if (settings["clear_promptBox_when_changing_items"] == true) {
                 ClearPromptWhenSwitchItemCheckBox.Checked = true;
@@ -49,6 +50,9 @@ namespace LoRA_Explorer {
             }
             if (settings["change_lora_to_lyco"] == true) {
                 ChangeLoraToLycoCheckBox.Checked = true;
+            }
+            if (settings["change_jpg_to_png"] == true) {
+                ChangeJpgToPngCheckBox.Checked = true;
             }
             int curWidth = settings["item_width"] / 10;
             if (curWidth >= ItemWidthTrackBar.Minimum && curWidth <= ItemWidthTrackBar.Maximum) {
@@ -142,6 +146,14 @@ namespace LoRA_Explorer {
             }
             Console.WriteLine($"setting changed: change_lora_to_lyco to {ChangeLoraToLycoCheckBox.Checked}");
         }
+        private void ChangeJpgToPngCheckBox_CheckedChanged(object sender, EventArgs e) {
+            if (ChangeJpgToPngCheckBox.Checked == true) {
+                settings["change_jpg_to_png"] = true;
+            } else if (ChangeJpgToPngCheckBox.Checked == false) {
+                settings["change_jpg_to_png"] = false;
+            }
+            Console.WriteLine($"setting changed: change_jpg_to_png to {ChangeJpgToPngCheckBox.Checked}");
+        }
 
 
         // data 파일 일괄삭제
@@ -201,6 +213,12 @@ namespace LoRA_Explorer {
             text += "\nchange_lora_to_lyco = ";
             if (settings.ContainsKey("change_lora_to_lyco")) {
                 text += settings["change_lora_to_lyco"].ToString();
+            } else {
+                text += "false";
+            }
+            text += "\nchange_jpg_to_png = ";
+            if (settings.ContainsKey("change_jpg_to_png")) {
+                text += settings["change_jpg_to_png"].ToString();
             } else {
                 text += "false";
             }
